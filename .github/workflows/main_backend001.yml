@@ -26,10 +26,15 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
+          pwd
       
       - name: Install dependencies
         run: |
+          pwd
+          ls
           cd backend
+          pwd
+          ls
           pip install --upgrade pip
           pip install -r requirements.txt
 
