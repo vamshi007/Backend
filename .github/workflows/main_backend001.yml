@@ -24,6 +24,8 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
+          ls
+          pwd
           python -m venv venv
           source venv/bin/activate
       
