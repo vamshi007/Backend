@@ -24,40 +24,22 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          ls 
-          pwd
-          cd backend
-          pwd
           python -m venv venv
           source venv/bin/activate
       
       - name: Install dependencies
         run: |
-          ls
-          pwd
-          cd backend
-          pwd
-          ls
           pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Collect static files
         run: |
-          ls
-          pwd
-          cd backend
-          pwd
-          ls
           python manage.py collectstatic --noinput
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
         run: |
-          ls
-          pwd
-          cd backend
-          pwd
           zip release.zip ./* -r
 
       - name: Upload artifact for deployment jobs
@@ -65,7 +47,7 @@ jobs:
         with:
           name: python-app
           path: |
-            backend/release.zip
+            release.zip
             !venv/
 
   deploy:
