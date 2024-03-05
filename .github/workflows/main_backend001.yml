@@ -29,8 +29,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          ls
-          pip install -r requirements.txt
+          pip install -r requriments.txt
 
       - name: Collect static files
         run: |
